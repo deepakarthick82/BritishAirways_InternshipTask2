@@ -1,0 +1,49 @@
+from google.colab import files
+uploaded = files.upload()
+
+## All the import libraries
+## EDA tools
+import csv
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
+from collections import Counter
+
+##Single model classifiers
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+
+#Ensemble classifications models
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.model_selection import cross_val_score
+
+#Model evaluation
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import (accuracy_score,confusion_matrix, classification_report, roc_auc_score,
+f1_score, recall_score, precision_score, SCORERS)
+import time
+
+# Imbalance, Hyperparameter tunning and pipelines
+from imblearn.over_sampling import SMOTENC
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.model_selection import GridSearchCV
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.compose import ColumnTransformer
+#!pip install category_encoders
+import category_encoders as ce
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+
+
+# custom colors
+
+my_colors = ["#c6b34e","#95354a", "#57b9a8","#b0ddff", "#426872","#215c97", "#02b6b4","#b05468","#cd9f62","#aaaaaa","#8fce00","#827861"]
+# Create a seaborn palette object
+my_palette = sns.color_palette(my_colors)
+# Use the custom palette with a seaborn function
+sns.set_palette(my_palette)
+from matplotlib.colors import ListedColormap
+colors = ['#ffffcd', '#ffeaa4', '#ffca2a','#c6b34e']
+my_cmap = sns.color_palette(colors)
+cmap = ListedColormap(colors)
